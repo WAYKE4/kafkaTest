@@ -1,0 +1,10 @@
+run from console:
+	zookeeper: .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+	kafka: .\bin\windows\kafka-server-start.bat .\config\server.properties
+	create topic: .\bin\windows\kafka-topics.bat --create --topic demo-topic1 --partitions 3 --replication-factor 3 --bootstrap-server localhost:9092
+	list of topics: .\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+	describe topic: .\bin\windows\kafka-topics.bat --describe --topic demo-topic1 --bootstrap-server localhost:9092
+	console produser: .\bin\windows\kafka-console-producer.bat --topic demo-topic1 --bootstrap-server localhost:9092
+	console consumer: .\bin\windows\kafka-console-consumer.bat --topic demo-topic1 --from-beginning --bootstrap-server localhost:9092
+	start connector to topic: .\bin\windows\connect-standalone.bat .\config\connect-standalone.properties .\config\alert-source.properties
+	start connector to file: .\bin\windows\connect-standalone.bat .\config\connect-standalone.properties .\config\alert-source.properties .\config\alert-sink.properties
